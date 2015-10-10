@@ -4,21 +4,23 @@
 
     ul.nav.nav-pills role='tablist'
       li.nav-item
-        a.nav-link.active href="#edit-tab-pane" role="tab" data-toggle="tab"
-          | Edit
+        a.nav-link.active href="#email-preview-tab-pane" role="tab" data-toggle="tab"
+          | Email Preview
       li.nav-item
-        a.nav-link href="#preview-tab-pane" role="tab" data-toggle="tab"
-          | Preview
+        a.nav-link href="#facebook-preview-tab-pane" role="tab" data-toggle="tab"
+          | Facebook Preview
+      li.nav-item
+        a.nav-link href="#edit-tab-pane" role="tab" data-toggle="tab"
+          | Edit
 
 .tab-content
-  .tab-pane.active id='edit-tab-pane'
+  .tab-pane id='edit-tab-pane'
     .row
       .col-md-12
         = render 'form', post: @post
 
-  .tab-pane id='preview-tab-pane'
-    .row
-      .col-md-12
-        = render 'email_preview', post: @post
+  .tab-pane.active id='email-preview-tab-pane'
+    = render 'email_preview_tab_pane', post: @post
 
-        = link_to 'Send Email', send_email_post_path(@post), class: 'btn btn-danger', data: {confirm: 'Are you sure you want to send to the mailing list?'}
+  .tab-pane id='facebook-preview-tab-pane'
+    = render 'facebook_preview_tab_pane', post: @post

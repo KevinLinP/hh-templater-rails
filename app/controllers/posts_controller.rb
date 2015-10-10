@@ -9,12 +9,23 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(post_params.permit(:start_time))
 
     if @post.persisted?
       redirect_to post_path(@post)
     else
       render action: :new
+    end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+
+    if @post.persisted?
+      redirect_to post_path(@post)
+    else
+      render action: :show
     end
   end
 
@@ -28,7 +39,7 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(
       :email_subject, :venue_name, :date,
-      :location_name, :short_address, :start_time, :body,
+      :location_name, :short_address, :body,
       :maps_url, :header_image_url, :footer_image_url
     )
   end
