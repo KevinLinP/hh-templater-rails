@@ -2,21 +2,6 @@
   .col-md-12
     h1 Hashy Hour Templater
 
-    ul.nav.nav-pills role='tablist'
-      li.nav-item
-        a.nav-link.active href="#edit-tab-pane" role="tab" data-toggle="tab"
-          | Edit
-      li.nav-item
-        a.nav-link href="#preview-tab-pane" role="tab" data-toggle="tab"
-          | Preview
-
-.tab-content
-  .tab-pane.active id='edit-tab-pane'
-    .row
-      .col-md-12
-        = render 'form', post: @post
-
-  .tab-pane id='preview-tab-pane'
-    .row
-      .col-md-12
-        | hi
+.row
+  .col-md-12
+    = render 'form', post: @post

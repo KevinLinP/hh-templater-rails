@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'posts#new'
 
-  resources :posts
+  resources :posts do
+    post :send_email, on: :member
+  end
 
 end

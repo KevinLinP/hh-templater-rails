@@ -1,0 +1,37 @@
+/ post
+
+
+table width=600 style='margin: auto'
+  tr height=48
+    td colspan=2 style="text-align: center; font-size: 18px"
+      | Join your SH3 Kennel this Friday for:
+
+  tr
+    td width=396
+      -if post.header_image_url
+        img width=396 src=post.header_image_url
+
+    td width=204 style="text-align: center; font-size: 24px; line-height: 1.2; border-top-width: 1px; border-top-style: solid; border-top-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black;"
+      | Hashy Hour
+      br
+      | at
+      br
+      = post.venue_name
+      br
+      br
+      p style="font-size: 18px"
+        = post.date
+        br
+        = "#{post.start_time} - whenever"
+        br
+        - if post.location_name
+          = post.location_name locationName
+          br
+        = link_to post.short_address, post.maps_url, target: '_blank'
+
+  tr
+    td colspan=2 style="font-size: 21px"
+      / TODO: bring back markdown
+      = post.body
+      - if post.footer_image_url
+        img width=600 src=post.footer_image_url
