@@ -11,9 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20151010034751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "posts", force: :cascade do |t|
+    t.date     "date",             null: false
+    t.string   "email_subject",    null: false
+    t.string   "venue_name",       null: false
+    t.string   "location_name"
+    t.string   "short_address",    null: false
+    t.string   "start_time"
+    t.string   "body",             null: false
+    t.string   "maps_url",         null: false
+    t.string   "header_image_url"
+    t.string   "footer_image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
