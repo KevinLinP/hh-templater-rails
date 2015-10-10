@@ -1,8 +1,7 @@
 .row
-  .col-sm-11
-    p.lead = post.email_subject
-  .col-sm-1
-    = link_to 'Send Email', send_email_post_path(post), class: 'btn btn-danger', data: {confirm: 'Are you sure you want to send to the mailing list?'}
+  = bootstrap_form_for(post, url: send_email_post_path(post)) do |f|
+    .col-lg-12
+      = f.text_field :email_subject, hide_label: true, append: f.submit('Send Email', class: 'btn btn-danger', data: {confirm: 'Are you sure you want to send to the mailing list?'})
 
 .row
   .col-md-12
