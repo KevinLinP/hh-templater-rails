@@ -1,0 +1,22 @@
+/ post
+
+= bootstrap_form_for(post) do |f|
+  fieldset.form-group
+    = f.text_field :venue_name
+    = f.text_field :start_time
+    = f.text_field :short_address
+
+  fieldset.form-group
+    = f.text_area :body
+
+  fieldset.form-group
+    = f.text_field :maps_url
+    = f.text_field :header_image_url
+    = f.text_field :footer_image_url
+
+  fieldset.form-group
+    .row
+      .col-xs-6
+        = f.submit 'Save', name: 'action', class: 'btn btn-primary' do
+      .col-xs-6
+        = f.submit 'Send', name: 'action', class: 'btn btn-danger', style: 'float: right;', data: {confirm: 'Are you sure you want to send this email to the mailing list?'}
