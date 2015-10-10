@@ -1,1 +1,55 @@
-| hi
+/<ul class="nav nav-tabs" role="tablist">
+  /<li class="nav-item">
+    /<a class="nav-link active" href="#home" role="tab" data-toggle="tab">Home</a>
+  /</li>
+  /<li class="nav-item">
+    /<a class="nav-link" href="#profile" role="tab" data-toggle="tab">Profile</a>
+  /</li>
+  /<li class="nav-item">
+    /<a class="nav-link" href="#messages" role="tab" data-toggle="tab">Messages</a>
+  /</li>
+  /<li class="nav-item">
+    /<a class="nav-link" href="#settings" role="tab" data-toggle="tab">Settings</a>
+  /</li>
+/</ul>
+
+
+.row
+  .col-md-12
+    h1 Hashy Hour Templater
+
+    ul.nav.nav-pills role='tablist'
+      li.nav-item
+        a.nav-link.active href="#edit-tab-pane" role="tab" data-toggle="tab"
+          | Edit
+      li.nav-item
+        a.nav-link href="#preview-tab-pane" role="tab" data-toggle="tab"
+          | Preview
+
+.tab-content
+  .tab-pane.active id='edit-tab-pane'
+    .row
+      .col-md-12
+        = bootstrap_form_for(Post.new) do |f|
+          fieldset.form-group
+            = f.text_field :venue_name
+            = f.text_field :start_time
+            = f.text_field :short_address
+
+          fieldset.form-group
+            = f.text_area :body
+
+          fieldset.form-group
+            = f.text_field :maps_url
+            = f.text_field :header_image_url
+            = f.text_field :footer_image_url
+
+          fieldset.form-group
+            .row
+              .col-xs-6
+                = f.submit 'Save', name: 'action', class: 'btn btn-primary' do
+              .col-xs-6
+                = f.submit 'Send', name: 'action', class: 'btn btn-danger', style: 'float: right;', data: {confirm: 'Are you sure you want to send this email to the mailing list?'}
+
+  .tab-pane id='preview-tab-pane'
+    | hi

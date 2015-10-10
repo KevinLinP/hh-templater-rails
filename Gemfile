@@ -11,6 +11,7 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'slim'
+gem 'bootstrap_form'
 
 # Asset Pipeline
 gem 'rails_12factor'
@@ -30,4 +31,3 @@ group :development do
   gem 'web-console'
   gem 'spring'
 end
-
