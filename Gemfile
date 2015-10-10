@@ -12,11 +12,14 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'slim'
 
+# Asset Pipeline
+gem 'rails_12factor'
+
 # Asset libraries
 gem 'jquery-rails'
 gem 'turbolinks'
 source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-bootstrap', '~> 4.0.0.alpha'
 end
 
 group :development, :test do
