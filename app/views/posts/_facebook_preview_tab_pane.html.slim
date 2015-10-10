@@ -1,2 +1,11 @@
+
 .row
   .col-lg-12
+    .card.card-block
+
+      .text-muted style='float: right;'
+        small
+          button.btn.btn-link data-clipboard-target="#facebook-preview"
+            | copy
+
+      pre.card-text#facebook-preview = post.facebook_preview

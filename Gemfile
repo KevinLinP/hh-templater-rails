@@ -20,7 +20,7 @@ gem 'rails_12factor'
 gem 'jquery-rails'
 gem 'turbolinks'
 source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap', '~> 4.0.0.alpha'
+  # blank for now
 end
 
 group :development, :test do
